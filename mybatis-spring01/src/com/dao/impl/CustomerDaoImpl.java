@@ -6,6 +6,6 @@ import src.com.po.Customer;
 
 public class CustomerDaoImpl extends SqlSessionDaoSupport implements CustomerDao {
     public Customer findCustomerById(Integer id) {
-        return this.getSqlSession().selectOne("com.po.CustomerMapper.findCustomerById",id);
+        return this.getSqlSession().selectOne("src.com.po.CustomerMapper.findCustomerById",id);
     }
 }
