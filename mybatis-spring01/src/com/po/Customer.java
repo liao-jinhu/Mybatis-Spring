@@ -1,10 +1,10 @@
 package src.com.po;
 
 public class Customer {
-    private Integer id;  //客户id
+    private  Integer id; //主键id
     private String username;  //客户名称
-    private String jobs;  //客户职业
-    private String phone;  //电话
+    private String jobs;  //客户工作
+    private String phone;  //客户电话
 
     public Integer getId() {
         return id;
