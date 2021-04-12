@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!--
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+        -->
+        <setting name="logImpl" value="LOG4J"/>
+
+        <!--显示的开启全局缓存-->
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+
+    <!--使用扫描包的形式定义别名-->
+    <typeAliases>
+        <package name="src.com.po"/>
+    </typeAliases>
+    <mappers>
+        <mapper resource="src/com/po/CustomerMapper.xml"/>
+    </mappers>
+</configuration>

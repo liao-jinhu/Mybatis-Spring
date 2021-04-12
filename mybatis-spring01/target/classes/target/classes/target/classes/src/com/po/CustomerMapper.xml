@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="src.com.po.CustomerMapper">
-    <select id="findCustomerById" parameterType="Integer">
+    <select id="findCustomerById" parameterType="Integer" resultType="Customer">
         select * from mybatis.t_customer where id=#{id}
     </select>
 

@@ -19,7 +19,7 @@
           class="org.apache.commons.dbcp2.BasicDataSource">
         <!--数据库驱动 -->
         <property name="driverClassName" value="${jdbc.driver}" />
-        <property name="url" value="${jdbc.url}" />
+        <property name="url" value="${jdbc.url}"/>
         <property name="username" value="${jdbc.username}" />
         <property name="password" value="${jdbc.password}" />
         <property name="maxTotal" value="${jdbc.maxTotal}" />
@@ -45,6 +45,12 @@
     <!--实例化Dao -->
     <bean id="customerDao" class="src.com.dao.impl.CustomerDaoImpl">
         <!-- 注入SqlSessionFactory对象实例 -->
+        <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+    </bean>
+
+
+    <bean id="customerMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="src.com.mapper.CustomerMapper" />
         <property name="sqlSessionFactory" ref="sqlSessionFactory" />
     </bean>
 </beans>
