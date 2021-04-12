@@ -7,4 +7,14 @@
         select * from mybatis.t_customer where id=#{id}
     </select>
 
+    <delete id="deleteCustomerById" parameterType="Integer">
+        delete from mybatis.t_customer where id=#{id}
+    </delete>
+
+    <update id="addCustomerById" parameterType="Customer">
+        insert into t_customer(username, jobs, phone) values (#{username},#{jobs},#{phone})
+    </update>
+
+
+
 </mapper>

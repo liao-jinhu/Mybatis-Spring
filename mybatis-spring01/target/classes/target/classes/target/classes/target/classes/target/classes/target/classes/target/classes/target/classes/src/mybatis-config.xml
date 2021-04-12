@@ -19,5 +19,6 @@
     </typeAliases>
     <mappers>
         <mapper resource="src/com/po/CustomerMapper.xml"/>
+        <mapper resource="src/com/po/CustomerMapper.xml"/>
     </mappers>
 </configuration>

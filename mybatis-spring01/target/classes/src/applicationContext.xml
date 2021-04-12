@@ -19,11 +19,15 @@
           class="org.apache.commons.dbcp2.BasicDataSource">
         <!--数据库驱动 -->
         <property name="driverClassName" value="${jdbc.driver}" />
+        <!--数据库的地址-->
         <property name="url" value="${jdbc.url}"/>
         <property name="username" value="${jdbc.username}" />
         <property name="password" value="${jdbc.password}" />
+        <!--最大连接数-->
         <property name="maxTotal" value="${jdbc.maxTotal}" />
+        <!--最大空闲连接-->
         <property name="maxIdle" value="${jdbc.maxIdle}" />
+        <!--初始化连接数-->
         <property name="initialSize" value="${jdbc.initialSize}" />
     </bean>
     <!-- 事务管理器，依赖于数据源 -->
@@ -45,6 +49,7 @@
 
     <!--开启扫描-->
     <context:component-scan base-package="src.com.Service"/>
+
     <!--实例化Dao -->
     <bean id="customerDao" class="src.com.dao.impl.CustomerDaoImpl">
         <!-- 注入SqlSessionFactory对象实例 -->
