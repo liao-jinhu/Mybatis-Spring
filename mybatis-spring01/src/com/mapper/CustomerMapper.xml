@@ -3,15 +3,26 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="src.com.mapper.CustomerMapper">
+    <resultMap id="resultMap" type="Customer">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="jobs" column="jobs"/>
+        <result property="phone" column="phone"/>
+    </resultMap>
     <select id="findCustomerById" parameterType="Integer" resultType="Customer">
         select *
         from t_customer
         where id = #{id}
     </select>
 
+    <select id="findAllCustomer" resultMap="resultMap">
+        select *  from t_customer
+    </select>
+
     <insert id="addCustomer" parameterType="Customer" >
         insert into  t_customer  (username,jobs,phone)
         values (#{username},#{jobs},#{phone})
     </insert>
+
 </mapper>
 
